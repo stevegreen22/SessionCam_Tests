@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ef306d6-0e1a-407d-9dbe-e6227c755674" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$USER_HOME$/Development/Dev Workspace/SessionCam/src/main/scala/com/sessioncam/FileInput/FileParser.scala" afterPath="$USER_HOME$/Development/Dev Workspace/SessionCam/src/main/scala/com/sessioncam/FileInput/FileParser.scala" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/Development/Dev Workspace/SessionCam/src/main/scala/com/sessioncam/JsonParsing/conversion/DateConvertor.scala" afterPath="$USER_HOME$/Development/Dev Workspace/SessionCam/src/main/scala/com/sessioncam/JsonParsing/conversion/DateConvertor.scala" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/Development/Dev Workspace/SessionCam/src/main/scala/com/sessioncam/Main.scala" afterPath="$USER_HOME$/Development/Dev Workspace/SessionCam/src/main/scala/com/sessioncam/Main.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../data/TimeZone1.json" afterPath="$PROJECT_DIR$/../data/TimeZone1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../data/TimeZone2.json" afterPath="$PROJECT_DIR$/../data/TimeZone2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/JsonParsing/conversion/DateConvertor.scala" afterPath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/JsonParsing/conversion/DateConvertor.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/Main.scala" afterPath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/Main.scala" />
     </list>
     <ignored path="sessioncam.iws" />
     <ignored path=".idea/workspace.xml" />
-    <ignored path="$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/target/" />
+    <ignored path="$PROJECT_DIR$/../../ffs/sessioncam/target/" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,7 +30,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="App.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/App.scala">
+        <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/App.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
@@ -38,7 +40,7 @@
         </entry>
       </file>
       <file leaf-file-name="AppTest.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/AppTest.scala">
+        <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/AppTest.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
@@ -50,7 +52,7 @@
         </entry>
       </file>
       <file leaf-file-name="ExampleSuite.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala">
+        <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -62,7 +64,7 @@
         </entry>
       </file>
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/pom.xml">
+        <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.7777778">
               <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
@@ -72,7 +74,7 @@
         </entry>
       </file>
       <file leaf-file-name="JsonExample.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/JsonExample.scala">
+        <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/JsonExample.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
@@ -84,7 +86,7 @@
         </entry>
       </file>
       <file leaf-file-name="sessioncam.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/sessioncam.iml">
+        <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/sessioncam.iml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -96,7 +98,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/Development/Dev Workspace/SessionCam" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -106,11 +108,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/App.scala" />
-        <option value="$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/JsonExample.scala" />
-        <option value="$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/MySpec.scala" />
-        <option value="$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/pom.xml" />
-        <option value="$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala" />
+        <option value="$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/App.scala" />
+        <option value="$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/JsonExample.scala" />
+        <option value="$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/MySpec.scala" />
+        <option value="$PROJECT_DIR$/../../ffs/sessioncam/pom.xml" />
+        <option value="$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala" />
       </list>
     </option>
   </component>
@@ -188,7 +190,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Development/Dev Workspace" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="options.lastSelected" value="Errors" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -209,7 +211,7 @@
       <option name="MAIN_CLASS_NAME" value="com.sessioncam.Json4sExample" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Development/Dev Workspace/SessionCam/sessioncam" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -401,7 +403,7 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Development/Dev Workspace/SessionCam/sessioncam" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -695,7 +697,7 @@
     <configuration default="true" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console">
       <module name="" />
       <setting name="vmparams4" value="-Djline.terminal=NONE" />
-      <setting name="workingDirectory" value="$USER_HOME$/Development/Dev Workspace/SessionCam/sessioncam" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
       <setting name="consoleArgs" value="-usejavacp" />
       <method />
     </configuration>
@@ -937,7 +939,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/App.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/App.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
@@ -945,7 +947,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/AppTest.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/AppTest.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
@@ -955,7 +957,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -965,7 +967,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/pom.xml">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -973,7 +975,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/JsonExample.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/JsonExample.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
@@ -983,7 +985,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/sessioncam.iml">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/sessioncam.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -991,7 +993,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/App.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/App.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -999,7 +1001,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/AppTest.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/AppTest.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
@@ -1009,7 +1011,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -1019,7 +1021,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/App.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/App.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
@@ -1027,7 +1029,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/AppTest.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/AppTest.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
@@ -1037,7 +1039,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -1047,7 +1049,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/pom.xml">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1055,7 +1057,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/JsonExample.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/JsonExample.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
@@ -1065,7 +1067,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/sessioncam.iml">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/sessioncam.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1073,7 +1075,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/App.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/App.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
@@ -1081,7 +1083,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/AppTest.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/AppTest.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
@@ -1091,7 +1093,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -1101,7 +1103,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/pom.xml">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
@@ -1109,7 +1111,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/JsonExample.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/JsonExample.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1119,7 +1121,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/sessioncam.iml">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/sessioncam.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1127,7 +1129,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/sessioncam.iml">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/sessioncam.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1135,7 +1137,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/JsonExample.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/JsonExample.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
@@ -1145,7 +1147,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/main/scala/com/sessioncam/App.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/main/scala/com/sessioncam/App.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
@@ -1153,7 +1155,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/AppTest.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/AppTest.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
@@ -1163,7 +1165,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/src/test/scala/com/sessioncam/ExampleSuite.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -1173,7 +1175,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/Dev Workspace/ffs/sessioncam/pom.xml">
+    <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/pom.xml">
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
         <state />
       </provider>
