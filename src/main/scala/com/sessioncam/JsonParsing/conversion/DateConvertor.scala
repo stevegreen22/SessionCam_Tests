@@ -13,6 +13,11 @@ import com.typesafe.scalalogging.LazyLogging
   */
 class DateConvertor(date: DateTime, from: String, to: String) extends LazyLogging{
 
+  /**
+    * Convert method will attempt to convert from UTC to CET and vice versa depending
+    * on what the arguments of the class are.
+    * @return new modified DateTime object
+    */
   def convert: DateTime = {
     logger.info(s"Attempting to convert date ${date.toString} from ${from.toUpperCase} to ${to.toUpperCase}")
     if (from == "" || to == "") {
