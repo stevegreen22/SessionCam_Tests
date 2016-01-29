@@ -13,33 +13,41 @@ object Main extends App with CustomJsonFormats{
 
   //get the files.
   val okFileExtensions = List("json")
+  val listOfTimezones = List[Timezone]()
   try {
-    val files = getListOfFilesFromDirectory("/Users/SteveGreen/Development/Dev Workspace/SessionCam/data", okFileExtensions)
+//    val files = getListOfFilesFromDirectory("/Users/SteveGreen/Development/Dev Workspace/SessionCam/data", okFileExtensions)
+    val files = getListOfFilesFromDirectory("/home/steveg/DevResources/OtherProjects/SessionCam/data", okFileExtensions)
     //Todo: For each file, convert it to a string, close the file.
     for (file <- files) {
       //Obtain the string of each file.
       val str = getFileContentsAsString(file)
       println(str)
 
-
       val timezones = parse(str) \ "data"
-      val tzList = timezones.extract[List[Timezone]]
-
       println(timezones)
 
+      val tzList = timezones.extract[List[Timezone]]
+      println(tzList)
 
-//PROGRESS!!!!!
       tzList.foreach { timezone: Timezone => println(
         timezone.name + " " + timezone.date) }
 
+      //printing the entire list of objects.
       tzList.foreach(println)
 
-      //for each JSON block, create a new POJO
-      //Add each to a list
-
-      //Combine the lists together using a key.
+      val x = listOfTimezones ::: tzList
+      println(x)
 
 
+
+
+      //Todo: Update a list each time a json object from either of the files is read in.
+
+      //Todo: Use this complete list to create an aggregated collection
+
+      //Todo: Pass the items of the list through the time converter to adjust the time
+
+      //Todo: This updated list can now be parsed into an output JSON file
 
 
     }

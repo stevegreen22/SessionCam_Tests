@@ -23,7 +23,7 @@ object FileParser extends LazyLogging{
     val dir = new File(directory)
     if (dir.exists && dir.isDirectory) {
       dir.listFiles.filter(_.isFile).toList.filter { file =>
-        extensions.exists(file.getName.endsWith(_))
+        extensions.exists(file.getName.endsWith)
       }
     } else {
       logger.error("No files were found within the specified directory")
