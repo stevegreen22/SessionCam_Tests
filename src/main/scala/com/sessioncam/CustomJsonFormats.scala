@@ -13,5 +13,6 @@ trait CustomJsonFormats {
   }
 
   implicit val formats = customDateFormat ++ JodaTimeSerializers.all
-
 }
+
+

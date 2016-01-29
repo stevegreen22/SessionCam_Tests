@@ -1,18 +1,19 @@
-package com.sessioncam
+package com.sessioncam.serialising
 
-import com.sessioncam.jsonparsing.conversion.DateConvertor
+import com.sessioncam.CustomJsonFormats
 import com.sessioncam.model.TimezoneDetails
 import com.typesafe.scalalogging.LazyLogging
-import org.json4s._
 import org.json4s.native.JsonMethods._
+import org.json4s.native.Serialization.{write => swrite}
+import org.json4s.{NoTypeHints, native}
 /**
- * Created by steveg on 27/01/16.
-  *
-  * Test harness.
- */
-object JsonExample extends LazyLogging with CustomJsonFormats{
+  * Created by SteveGreen on 29/01/2016.
+  */
+object JsonSerialiser extends CustomJsonFormats with LazyLogging{
 
   def main(args: Array[String]): Unit = {
+
+    implicit val formats = native.Serialization.formats(NoTypeHints)
 
     val json = """{
                    "name" : "United Kingdom",
@@ -23,15 +24,12 @@ object JsonExample extends LazyLogging with CustomJsonFormats{
                  }"""
 
     val timeline = parse(json).extract[TimezoneDetails]
+
     println("Original Value: " + timeline)
 
-    timeline.jodaDate = timeline.jodaDate.plusDays(4)
-    println("Updated Value: " + timeline)
 
-    val s = new DateConvertor(timeline.jodaDate, "utc", "cet")
-    val convertedDate = s.convert
-    print("Converted Date:" + convertedDate)
 
 
   }
+
 }

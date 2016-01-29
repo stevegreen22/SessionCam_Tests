@@ -9,7 +9,7 @@
     },
     {
       "name": "B",
-      "timezone": "UTC",
+      "timezone": "CET",
       "date" : "27/01/2016",
       "time": "14:35",
       "jodaDate": "2015-11-23T14:33:37.533Z"
@@ -23,7 +23,7 @@
     },
     {
       "name": "D",
-      "timezone": "UTC",
+      "timezone": "CET",
       "date" : "27/01/2016",
       "time": "14:35",
       "jodaDate": "2015-06-23T14:33:37.533Z"

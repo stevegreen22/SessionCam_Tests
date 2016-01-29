@@ -31,16 +31,7 @@ object FileParser extends LazyLogging{
     }
   }
 
-  @throws(classOf[Exception])
-  def getFileContentsAsString(file : java.io.File): String = {
-    logger.info(s"Attempting to get contents of file: ${file.getName} from directory: ${file.getCanonicalPath}")
-    try {
-      val fileDetails = scala.io.Source.fromFile(file)
-      val str = fileDetails.mkString
-      fileDetails.close
-      return str
-    }
-  }
+
 
 
 }

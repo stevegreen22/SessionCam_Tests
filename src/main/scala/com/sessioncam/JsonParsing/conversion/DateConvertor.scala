@@ -1,4 +1,4 @@
-package com.sessioncam.JsonParsing.conversion
+package com.sessioncam.jsonparsing.conversion
 
 import org.joda.time.DateTime
 import com.typesafe.scalalogging.LazyLogging

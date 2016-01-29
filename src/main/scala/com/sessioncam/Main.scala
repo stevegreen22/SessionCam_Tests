@@ -1,67 +1,76 @@
 package com.sessioncam
 
-import java.io.FileNotFoundException
-
 import com.sessioncam.FileParsing.FileParser._
-import com.sessioncam.JsonExample.Timezone
-import org.json4s.native.JsonMethods._
+import com.sessioncam.jsonparsing.deserialisation.JsonDeserialiser.createTimezoneListFromJsonFile
+import com.sessioncam.model.TimezoneDetails
 
 /**
   * Created by SteveGreen on 27/01/2016.
   */
-object Main extends App with CustomJsonFormats{
+object Main extends App {
 
-  //get the files.
-  val okFileExtensions = List("json")
-  val listOfTimezones = List[Timezone]()
-  try {
-//    val files = getListOfFilesFromDirectory("/Users/SteveGreen/Development/Dev Workspace/SessionCam/data", okFileExtensions)
-    val files = getListOfFilesFromDirectory("/home/steveg/DevResources/OtherProjects/SessionCam/data", okFileExtensions)
-    //Todo: For each file, convert it to a string, close the file.
-    for (file <- files) {
-      //Obtain the string of each file.
-      val str = getFileContentsAsString(file)
-      println(str)
-
-      val timezones = parse(str) \ "data"
-      println(timezones)
-
-      val tzList = timezones.extract[List[Timezone]]
-      println(tzList)
-
-      tzList.foreach { timezone: Timezone => println(
-        timezone.name + " " + timezone.date) }
-
-      //printing the entire list of objects.
-      tzList.foreach(println)
-
-      val x = listOfTimezones ::: tzList
-      println(x)
-
-
-
-
-      //Todo: Update a list each time a json object from either of the files is read in.
-
-      //Todo: Use this complete list to create an aggregated collection
-
-      //Todo: Pass the items of the list through the time converter to adjust the time
-
-      //Todo: This updated list can now be parsed into an output JSON file
-
-
-    }
+  var listOfTimezones = List[TimezoneDetails]();
+  try{
+    val files = getListOfFilesFromDirectory("/Users/SteveGreen/Development/Dev Workspace/SessionCam/data", List("json"))
+    //val files = getListOfFilesFromDirectory("/home/steveg/DevResources/OtherProjects/SessionCam/data", okFileExtensions)
+    listOfTimezones = createTimezoneListFromJsonFile(files)
   } catch {
-    case e: FileNotFoundException => println("No files were found - Exiting: " + e);
+    case e : Exception => println("Exception!!!")
+  }
+
+  listOfTimezones.foreach {
+    timezone: TimezoneDetails => println(timezone)
+  }
+
+  //todo: playing but re evaluate the utility of this.
+  def filterByGMT(timezone: String) = timezone match {
+    case "gmt"  => true
+    case _ => false
+  }
+
+  def createTimezoneFilteredListJAVA(tzList: List[TimezoneDetails]): List[TimezoneDetails] = tzList match {
+    case Nil => tzList
+    case x :: tzList =>
+      if (x.timezone.equalsIgnoreCase("utc")) {
+        x :: createTimezoneFilteredList(tzList)
+      } else {
+        createTimezoneFilteredList(tzList)
+      }
+  }
+
+  def createTimezoneFilteredList(tzList: List[TimezoneDetails]): List[TimezoneDetails] = tzList match {
+    case Nil => tzList
+    case x :: tzList => if (x.timezone.equalsIgnoreCase("utc")) x :: createTimezoneFilteredList(tzList) else createTimezoneFilteredList(tzList)
   }
 
 
-  //iterate over list of files building
-//  files.foreach{
-//    //take the json and convert it into the case class.
-//
-//  }
+  var utcTimezoneDetails = createTimezoneFilteredList(listOfTimezones)
+  utcTimezoneDetails.foreach(println)
 
-      //for each file, process json
+
+  //also filter as an option.
+  val x = for (timezone <- listOfTimezones) yield filterByGMT("gmt")
+  println(x)
+
+  listOfTimezones.foreach{
+    timezone => filterByGMT("gmt")
+  }
+
+  //will aggregate the files on UTC / CET - the 'timezone' property.
+
+  //this has grouped the timezoneObjects by timezone value.
+  println(listOfTimezones.groupBy(_.timezone).mapValues(_.map(_.copy())))
+
+
 
 }
+
+
+
+
+
+//Done: Update a list each time a json object from either of the files is read in.
+//Todo: Use this complete list to create an aggregated collection
+//Todo: Pass the items of the list through the time converter to adjust the time
+//Todo: This updated list can now be parsed into an output JSON file
+
