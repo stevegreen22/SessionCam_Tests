@@ -64,8 +64,8 @@ object Main extends App with CustomJsonFormats{
 
   createOutputFile(json)
   createOutputFile("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataOutput/testVersion2.json", json)
-  createOutputFile("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataOutput", "testVersion3.json", json)
-  createOutputFile("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataOutput", "testVersion4", ".json", json)
+  createOutputFile("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataOutput/", "testVersion3.json", json)
+  createOutputFile("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataOutput/", "testVersion4", ".json", json)
 
 
 
