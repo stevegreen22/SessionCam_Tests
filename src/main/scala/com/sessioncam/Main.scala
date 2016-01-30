@@ -3,7 +3,7 @@ package com.sessioncam
 import java.io.FileNotFoundException
 
 import com.sessioncam.FileParsing.InputFileParser._
-import com.sessioncam.FileParsing.OutputFileGenerator._
+import com.sessioncam.FileParsing.OutputFileGenerator
 import com.sessioncam.customfilters.CustomJsonFilters.createTimezoneFilteredList
 import com.sessioncam.jsonparsing.conversion.DateConvertor.convertTimezone
 import com.sessioncam.jsonparsing.deserialisation.JsonDeserialiser.createTimezoneListFromJsonFile
@@ -22,18 +22,16 @@ object Main extends LazyLogging {
   private val fromTimezone = "cet"
   private val toTimezone = "utc"
   private val defaultInputLocation = "/Users/steveGreen/Development/Dev Workspace/SessionCam/dataInput"
-  private val defaultOutputLocation = "/Users/steveGreen/Development/Dev Workspace/SessionCam/dataOutput"
 
   def main(args: Array[String]) {
     try{
-      val files = getListOfFilesFromDirectory("FGy", List("json"))
+      val files = getListOfFilesFromDirectory(defaultInputLocation, List("json"))
       //val files = getListOfFilesFromDirectory("/home/steveg/DevResources/OtherProjects/SessionCam/data", okFileExtensions)
       if (files.nonEmpty) {
         listOfTimezones = createTimezoneListFromJsonFile(files)
 
         logger.info(s"Attempting to filter by $filterTimezone")
         val cetTimezoneDetails = createTimezoneFilteredList(listOfTimezones, "cet")
-        cetTimezoneDetails.foreach(println)
 
         logger.info(s"Converting the timezone from $fromTimezone to $toTimezone")
           for (timezone <- cetTimezoneDetails) {
@@ -42,7 +40,8 @@ object Main extends LazyLogging {
 
         cetTimezoneDetails.foreach(println)
         val json = createJsonFromTimezoneList(cetTimezoneDetails)
-        createOutputFile(defaultOutputLocation + "testVersion2.json", json)
+        val outputFileGenerator = new OutputFileGenerator(fileContents = json)
+        outputFileGenerator.OutputFileGenerator.createOutputFile() //todo: <- can this be cleaned up?
 
       } else {
         //handle empty filelist without an exception?
@@ -59,10 +58,6 @@ object Main extends LazyLogging {
 }
 //this has grouped the timezoneObjects by timezone value.
 //println(listOfTimezones.groupBy(_.timezone).mapValues(_.map(_.copy())))
-
-
-
-
 
 
 //Done: Update a list each time a json object from either of the files is read in.
