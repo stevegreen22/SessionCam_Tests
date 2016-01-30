@@ -6,15 +6,15 @@ import java.io.{FileNotFoundException, File}
 /**
   * Created by SteveGreen on 27/01/2016.
   */
-object FileParser extends LazyLogging{
+object InputFileParser extends LazyLogging{
 
   /**
     * Function to take in a directory name as string and return a list
     * of files within that directory also checking that their extension
     * matches those given
     *
-    * @param directory
-    * @param extensions
+    * @param directory : the directory that we wish to search for files
+    * @param extensions : a list of strings representing the extensions we are looking for
     * @return A List containing the files
     */
   @throws(classOf[FileNotFoundException])
@@ -30,9 +30,5 @@ object FileParser extends LazyLogging{
       throw new FileNotFoundException("No files were found within the directory")
     }
   }
-
-
-
-
 }
 

@@ -1,7 +1,7 @@
 package com.sessioncam
 
-import com.sessioncam.FileParsing.FileParser
-import FileParser._
+import com.sessioncam.FileParsing.InputFileParser
+import InputFileParser._
 /**
   * Created by SteveGreen on 27/01/2016.
   */

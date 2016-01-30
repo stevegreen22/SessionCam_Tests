@@ -28,8 +28,7 @@ object JsonExample extends LazyLogging with CustomJsonFormats{
     timeline.jodaDate = timeline.jodaDate.plusDays(4)
     println("Updated Value: " + timeline)
 
-    val s = new DateConvertor(timeline.jodaDate, "utc", "cet")
-    val convertedDate = s.convert
+    val convertedDate = DateConvertor.convertTimezone(timeline.jodaDate, "utc", "cet")
     print("Converted Date:" + convertedDate)
 
 

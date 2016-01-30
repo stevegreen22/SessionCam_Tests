@@ -1,7 +1,8 @@
 package com.sessioncam.jsonparsing.conversion
 
+import com.typesafe.scalalogging.Logger
 import org.joda.time.DateTime
-import com.typesafe.scalalogging.LazyLogging
+import org.slf4j.LoggerFactory
 
 /**
   * Created by SteveGreen on 28/01/2016.
@@ -11,14 +12,16 @@ import com.typesafe.scalalogging.LazyLogging
   *
   * Note: Currently only UTC <=> ECT (+7) is supported.
   */
-class DateConvertor(date: DateTime, from: String, to: String) extends LazyLogging{
+object DateConvertor{
 
   /**
     * Convert method will attempt to convert from UTC to ECT and vice versa depending
     * on what the arguments of the class are.
+    *
     * @return new modified DateTime object
     */
-  def convert: DateTime = {
+  def convertTimezone(date: DateTime, from: String, to: String): DateTime = {
+    lazy val logger: Logger = Logger(LoggerFactory.getLogger(getClass.getName))
     logger.info(s"Attempting to convert date ${date.toString} from ${from.toUpperCase} to ${to.toUpperCase}")
     if (from == "" || to == "") {
       throw new IllegalArgumentException("Date Conversion Failed: From and To must be set")
@@ -28,11 +31,13 @@ class DateConvertor(date: DateTime, from: String, to: String) extends LazyLoggin
       //Todo: generify this so that we can utilise to and from to freely convert between dates.
       //Note: For now, we just need to check one of them and convert to the other.
       if (to.equalsIgnoreCase("utc")) {
-        return new DateTime(date.minusHours(7))
+        new DateTime(date.minusHours(7))
       } else {
-        return new DateTime(date.plusHours(7))
+        new DateTime(date.plusHours(7))
       }
     }
   }
+
+
 
 }

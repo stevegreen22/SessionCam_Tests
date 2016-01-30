@@ -1,17 +1,19 @@
 package com.sessioncam
 
-import com.sessioncam.FileParsing.FileParser._
+import com.sessioncam.FileParsing.InputFileParser._
+import com.sessioncam.FileParsing.OutputFileGenerator.createOutputFile
+import com.sessioncam.jsonparsing.conversion.DateConvertor
 import com.sessioncam.jsonparsing.deserialisation.JsonDeserialiser.createTimezoneListFromJsonFile
 import com.sessioncam.model.TimezoneDetails
 
 /**
   * Created by SteveGreen on 27/01/2016.
   */
-object Main extends App {
+object Main extends App with CustomJsonFormats{
 
   var listOfTimezones = List[TimezoneDetails]();
   try{
-    val files = getListOfFilesFromDirectory("/Users/SteveGreen/Development/Dev Workspace/SessionCam/data", List("json"))
+    val files = getListOfFilesFromDirectory("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataInput", List("json"))
     //val files = getListOfFilesFromDirectory("/home/steveg/DevResources/OtherProjects/SessionCam/data", okFileExtensions)
     listOfTimezones = createTimezoneListFromJsonFile(files)
   } catch {
@@ -22,44 +24,49 @@ object Main extends App {
     timezone: TimezoneDetails => println(timezone)
   }
 
-  //todo: playing but re evaluate the utility of this.
-  def filterByGMT(timezone: String) = timezone match {
-    case "gmt"  => true
-    case _ => false
-  }
 
-  def createTimezoneFilteredListJAVA(tzList: List[TimezoneDetails]): List[TimezoneDetails] = tzList match {
+  def createTimezoneFilteredList(tzList: List[TimezoneDetails], tx: String): List[TimezoneDetails] = tzList match {
     case Nil => tzList
-    case x :: tzList =>
-      if (x.timezone.equalsIgnoreCase("utc")) {
-        x :: createTimezoneFilteredList(tzList)
-      } else {
-        createTimezoneFilteredList(tzList)
-      }
-  }
-
-  def createTimezoneFilteredList(tzList: List[TimezoneDetails]): List[TimezoneDetails] = tzList match {
-    case Nil => tzList
-    case x :: tzList => if (x.timezone.equalsIgnoreCase("utc")) x :: createTimezoneFilteredList(tzList) else createTimezoneFilteredList(tzList)
+    case x :: tzList => if (x.timezone.equalsIgnoreCase(tx)) x :: createTimezoneFilteredList(tzList, tx) else createTimezoneFilteredList(tzList, tx)
   }
 
 
-  var utcTimezoneDetails = createTimezoneFilteredList(listOfTimezones)
+  println("filter on utc")
+  var utcTimezoneDetails = createTimezoneFilteredList(listOfTimezones, "utc")
   utcTimezoneDetails.foreach(println)
 
 
-  //also filter as an option.
-  val x = for (timezone <- listOfTimezones) yield filterByGMT("gmt")
-  println(x)
 
-  listOfTimezones.foreach{
-    timezone => filterByGMT("gmt")
+  println("filter on cet")
+  var cetTimezoneDetails = createTimezoneFilteredList(listOfTimezones, "cet")
+  cetTimezoneDetails.foreach(println)
+
+  for (timezone <- cetTimezoneDetails) {
+    timezone.jodaDate = DateConvertor.convertTimezone(timezone.jodaDate, "cet", "utc")
   }
+  println("updated dates")
+  cetTimezoneDetails.foreach(println)
 
-  //will aggregate the files on UTC / CET - the 'timezone' property.
+
+
 
   //this has grouped the timezoneObjects by timezone value.
-  println(listOfTimezones.groupBy(_.timezone).mapValues(_.map(_.copy())))
+  //println(listOfTimezones.groupBy(_.timezone).mapValues(_.map(_.copy())))
+
+
+  import org.json4s.native.Serialization.write
+  val json = write(cetTimezoneDetails)
+
+//  1 - it just takes the string and creates the file in the location we tell it
+//  2 - it takes filename/location and contents
+//  3 - filename, location, contents
+//  4 - filename, extension, location, contents
+
+  createOutputFile(json)
+  createOutputFile("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataOutput/testVersion2.json", json)
+  createOutputFile("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataOutput", "testVersion3.json", json)
+  createOutputFile("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataOutput", "testVersion4", ".json", json)
+
 
 
 
@@ -70,7 +77,8 @@ object Main extends App {
 
 
 //Done: Update a list each time a json object from either of the files is read in.
-//Todo: Use this complete list to create an aggregated collection
-//Todo: Pass the items of the list through the time converter to adjust the time
-//Todo: This updated list can now be parsed into an output JSON file
+//Done: Use this complete list to create an aggregated collection
+//Done: Pass the items of the list through the time converter to adjust the time
+//Done: This updated list can now be parsed into an output JSON file
+//Todo: Update main method so jar can be run from terminal
 
