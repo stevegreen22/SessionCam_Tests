@@ -13,9 +13,9 @@ import org.json4s.native.JsonMethods._
 object JsonDeserialiser extends LazyLogging with CustomJsonFormats{
 
   /**
-    *
-    * @param file
-    * @return
+    * Method for extraction the JSON data from a given file
+    * @param file : the file that we wish to get the json from
+    * @return a string representing the contents of the JSON file
     */
   def getJsonContentsAsString(file : java.io.File): String = {
     logger.info(s"Attempting to get contents of file: ${file.getName} from directory: ${file.getCanonicalPath}")
@@ -23,14 +23,14 @@ object JsonDeserialiser extends LazyLogging with CustomJsonFormats{
       val fileDetails = scala.io.Source.fromFile(file)
       val str = fileDetails.mkString
       fileDetails.close
-      return str
+      str
     }
   }
 
   /**
-    *
-    * @param files
-    * @return
+    * Method for obtaining timezone details from a list of given files
+    * @param files A List of files containing the data we're interested in
+    * @return a List of TimezoneDetails objects taken from the json
     */
   def createTimezoneListFromJsonFile(files : List[File]): List[TimezoneDetails] = {
     logger.info("Creating list of timezones from JSON")
@@ -43,14 +43,12 @@ object JsonDeserialiser extends LazyLogging with CustomJsonFormats{
         listOfTimezones = listOfTimezones ::: tzList
       } catch {
         case e : Exception =>
-          logger.error("There was a problem with creating the timezone list")
-          print("An exception occurred: " +e.getMessage)
+          logger.error("There was a problem with creating the timezone list" +e.getMessage)
         case _ =>
           logger.error("There was a problem with creating the timezone list")
-          print("Some exception occurred...")
       }
     }
-    return listOfTimezones
+    listOfTimezones
   }
 
 

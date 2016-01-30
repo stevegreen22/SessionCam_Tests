@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ef306d6-0e1a-407d-9dbe-e6227c755674" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/JsonParsing/Deserialisation/JsonDeserialiser.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/model/TimeZoneDetails.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/serialising/JsonSerialiser.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/test/scala/com/sessioncam/SetSpec.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/test/scala/com/sessioncam/UnitSpec.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/test/scala/com/sessioncam/specspec.scala" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/JsonExample3.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/JsonParsing/Deserialisation/BasicJsonDeserialising.scala" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../data/TimeZone1.json" afterPath="$PROJECT_DIR$/../data/TimeZone1.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../data/TimeZone2.json" afterPath="$PROJECT_DIR$/../data/TimeZone2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pom.xml" afterPath="$PROJECT_DIR$/../pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/CustomJsonFormats.scala" afterPath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/CustomJsonFormats.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/FileParsing/FileParser.scala" afterPath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/FileParsing/FileParser.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/JsonExample2.scala" afterPath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/JsonExample2.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/JsonParsing/conversion/DateConvertor.scala" afterPath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/JsonParsing/conversion/DateConvertor.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/Main.scala" afterPath="$PROJECT_DIR$/../src/main/scala/com/sessioncam/Main.scala" />
     </list>
@@ -66,8 +78,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../ffs/sessioncam/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7777778">
-              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.11111111">
+              <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -864,7 +876,7 @@
       <workItem from="1453918001818" duration="33000" />
       <workItem from="1453918061542" duration="678000" />
       <workItem from="1453921699428" duration="84000" />
-      <workItem from="1453934863039" duration="598000" />
+      <workItem from="1453934863039" duration="603000" />
     </task>
     <servers />
   </component>
@@ -886,7 +898,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3177000" />
+    <option name="totallyTimeSpent" value="3182000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="820" y="23" width="1012" height="1109" extended-state="0" />
@@ -900,7 +912,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32940018" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24948454" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24948454" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1180,8 +1192,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7777778">
-          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.11111111">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
           <folding />
         </state>
       </provider>

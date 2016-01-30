@@ -5,6 +5,8 @@ import org.json4s.ext.JodaTimeSerializers
 
 /**
   * Created by SteveGreen on 28/01/2016.
+  *
+  * Trait allows for redefinition of the formats used for converting json objects, required for jodatime
   */
 trait CustomJsonFormats {
 

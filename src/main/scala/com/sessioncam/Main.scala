@@ -1,76 +1,65 @@
 package com.sessioncam
 
+import java.io.FileNotFoundException
+
 import com.sessioncam.FileParsing.InputFileParser._
-import com.sessioncam.FileParsing.OutputFileGenerator.createOutputFile
-import com.sessioncam.jsonparsing.conversion.DateConvertor
+import com.sessioncam.FileParsing.OutputFileGenerator._
+import com.sessioncam.customfilters.CustomJsonFilters.createTimezoneFilteredList
+import com.sessioncam.jsonparsing.conversion.DateConvertor.convertTimezone
 import com.sessioncam.jsonparsing.deserialisation.JsonDeserialiser.createTimezoneListFromJsonFile
+import com.sessioncam.jsonparsing.serialisation.JsonSerialiser._
 import com.sessioncam.model.TimezoneDetails
+import com.typesafe.scalalogging.LazyLogging
 
 /**
   * Created by SteveGreen on 27/01/2016.
   */
-object Main extends App with CustomJsonFormats{
+object Main extends LazyLogging {
 
-  var listOfTimezones = List[TimezoneDetails]();
-  try{
-    val files = getListOfFilesFromDirectory("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataInput", List("json"))
-    //val files = getListOfFilesFromDirectory("/home/steveg/DevResources/OtherProjects/SessionCam/data", okFileExtensions)
-    listOfTimezones = createTimezoneListFromJsonFile(files)
-  } catch {
-    case e : Exception => println("Exception!!!")
+  private val filterTimezone = "cet" //todo: pull this in from args? how many args are we going to have?!
+  private var listOfTimezones = List[TimezoneDetails]()
+
+  private val fromTimezone = "cet"
+  private val toTimezone = "utc"
+  private val defaultInputLocation = "/Users/steveGreen/Development/Dev Workspace/SessionCam/dataInput"
+  private val defaultOutputLocation = "/Users/steveGreen/Development/Dev Workspace/SessionCam/dataOutput"
+
+  def main(args: Array[String]) {
+    try{
+      val files = getListOfFilesFromDirectory("FGy", List("json"))
+      //val files = getListOfFilesFromDirectory("/home/steveg/DevResources/OtherProjects/SessionCam/data", okFileExtensions)
+      if (files.nonEmpty) {
+        listOfTimezones = createTimezoneListFromJsonFile(files)
+
+        logger.info(s"Attempting to filter by $filterTimezone")
+        val cetTimezoneDetails = createTimezoneFilteredList(listOfTimezones, "cet")
+        cetTimezoneDetails.foreach(println)
+
+        logger.info(s"Converting the timezone from $fromTimezone to $toTimezone")
+          for (timezone <- cetTimezoneDetails) {
+            timezone.jodaDate = convertTimezone(timezone.jodaDate, fromTimezone, toTimezone)
+          }
+
+        cetTimezoneDetails.foreach(println)
+        val json = createJsonFromTimezoneList(cetTimezoneDetails)
+        createOutputFile(defaultOutputLocation + "testVersion2.json", json)
+
+      } else {
+        //handle empty filelist without an exception?
+      }
+    } catch {
+      case iae : IllegalArgumentException => logger.error("Exception: " + iae.getMessage)
+      case npe : NullPointerException => logger.error("Null Pointer Exception: " + npe.getMessage)
+      case fnf : FileNotFoundException => logger.error("Exception when searching for files: " +fnf.getMessage)
+      case _ : Exception => logger.error("Unknown Exception")
+    }
   }
-
-  listOfTimezones.foreach {
-    timezone: TimezoneDetails => println(timezone)
-  }
-
-
-  def createTimezoneFilteredList(tzList: List[TimezoneDetails], tx: String): List[TimezoneDetails] = tzList match {
-    case Nil => tzList
-    case x :: tzList => if (x.timezone.equalsIgnoreCase(tx)) x :: createTimezoneFilteredList(tzList, tx) else createTimezoneFilteredList(tzList, tx)
-  }
-
-
-  println("filter on utc")
-  var utcTimezoneDetails = createTimezoneFilteredList(listOfTimezones, "utc")
-  utcTimezoneDetails.foreach(println)
-
-
-
-  println("filter on cet")
-  var cetTimezoneDetails = createTimezoneFilteredList(listOfTimezones, "cet")
-  cetTimezoneDetails.foreach(println)
-
-  for (timezone <- cetTimezoneDetails) {
-    timezone.jodaDate = DateConvertor.convertTimezone(timezone.jodaDate, "cet", "utc")
-  }
-  println("updated dates")
-  cetTimezoneDetails.foreach(println)
-
-
-
-
-  //this has grouped the timezoneObjects by timezone value.
-  //println(listOfTimezones.groupBy(_.timezone).mapValues(_.map(_.copy())))
-
-
-  import org.json4s.native.Serialization.write
-  val json = write(cetTimezoneDetails)
-
-//  1 - it just takes the string and creates the file in the location we tell it
-//  2 - it takes filename/location and contents
-//  3 - filename, location, contents
-//  4 - filename, extension, location, contents
-
-  createOutputFile(json)
-  createOutputFile("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataOutput/testVersion2.json", json)
-  createOutputFile("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataOutput/", "testVersion3.json", json)
-  createOutputFile("/Users/SteveGreen/Development/Dev Workspace/SessionCam/dataOutput/", "testVersion4", ".json", json)
-
-
 
 
 }
+//this has grouped the timezoneObjects by timezone value.
+//println(listOfTimezones.groupBy(_.timezone).mapValues(_.map(_.copy())))
+
 
 
 
@@ -81,4 +70,5 @@ object Main extends App with CustomJsonFormats{
 //Done: Pass the items of the list through the time converter to adjust the time
 //Done: This updated list can now be parsed into an output JSON file
 //Todo: Update main method so jar can be run from terminal
+//Todo: save a list of the timezones found in the json, run them all through the converter changing as neccesary
 

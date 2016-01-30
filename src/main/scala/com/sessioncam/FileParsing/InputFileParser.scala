@@ -1,7 +1,8 @@
 package com.sessioncam.FileParsing
 
+import java.io.{File, FileNotFoundException}
+
 import com.typesafe.scalalogging.LazyLogging
-import java.io.{FileNotFoundException, File}
 
 /**
   * Created by SteveGreen on 27/01/2016.
@@ -20,15 +21,18 @@ object InputFileParser extends LazyLogging{
   @throws(classOf[FileNotFoundException])
   def getListOfFilesFromDirectory(directory: String, extensions: List[String]):List[File] = {
     logger.info("Attempting to read files from specified directory")
+    var resultList = List[File]()
     val dir = new File(directory)
-    if (dir.exists && dir.isDirectory) {
-      dir.listFiles.filter(_.isFile).toList.filter { file =>
-        extensions.exists(file.getName.endsWith)
+    try {
+      if (dir.exists && dir.isDirectory) {
+        resultList = dir.listFiles.filter(_.isFile).toList.filter { file =>
+          extensions.exists(file.getName.endsWith)
+        }
+      } else {
+        throw new FileNotFoundException("No files were found in that location")
       }
-    } else {
-      logger.error("No files were found within the specified directory")
-      throw new FileNotFoundException("No files were found within the directory")
     }
+    resultList
   }
 }
 
