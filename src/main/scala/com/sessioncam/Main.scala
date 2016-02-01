@@ -239,3 +239,4 @@ object Main extends LazyLogging {
 //todo: Filtering the lsit first removes some of the functionality - either rework it to do both or allow the option via args
 //Todo: the output file is not generated with the root data element so it can't be read back ina again. update serialiser.
 //Todo: Set a bool or something to indicate a clean slate, currently a bit higgledy.
+//Todo: if the output dir isn't present, create it.
