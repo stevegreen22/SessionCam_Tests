@@ -23,6 +23,7 @@ case class OutputFileGenerator(saveFileLocation: String = "/Users/steveGreen/Dev
     //Version 4
     def createOutputFile(): Unit = {
       try {
+        //todo: this can be easily made recursive, update it.
         if (doesFileExist(completeFilename)) {
           createNewFilename
         }
@@ -52,8 +53,7 @@ case class OutputFileGenerator(saveFileLocation: String = "/Users/steveGreen/Dev
       val updatedFilename = RegexUpdated
         file match {
           case updatedFilename(_*) =>
-            //shit!  will need to cache the incoming filename to make this in any way useful.
-            //this will only make sense if we generate multiple files within the same instance
+            //todo: mke recursive
             //val updateVersion = file.substring(file.lastIndexOf("(")+1, file.length-1)
             //version = updateVersion.toInt + 1
             version += 1
