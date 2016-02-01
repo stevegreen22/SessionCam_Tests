@@ -1,21 +1,19 @@
 package com.sessioncam.customfilters
 
-import com.sessioncam.CustomUnitSpec
 import com.sessioncam.jsonparsing.serialisation.JsonSerialiser
 import com.sessioncam.model.TimezoneDetails
 import org.joda.time.DateTime
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
-import org.scalatest.{BeforeAndAfterEach, Matchers}
-
 import org.json4s._
 import org.json4s.native.JsonMethods._
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
+import org.scalatest.{FlatSpec, Matchers}
 
 /**
   * Created by SteveGreen on 31/01/2016.
   */
 @RunWith(classOf[JUnitRunner])
-class JsonSerialiser$Test extends CustomUnitSpec with Matchers with BeforeAndAfterEach{
+class JsonSerialiser$Test extends FlatSpec with Matchers {
 
 
   behavior of "Json serialiser"

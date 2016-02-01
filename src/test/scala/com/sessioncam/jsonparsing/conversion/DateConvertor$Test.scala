@@ -1,7 +1,6 @@
 package com.sessioncam.jsonparsing.conversion
 
 import com.sessioncam.CustomException.TimezoneNotSupportedException
-import com.sessioncam.CustomUnitSpec
 import com.sessioncam.model.TimezoneDetails
 import com.typesafe.scalalogging.Logger
 import org.joda.time.DateTime
@@ -10,14 +9,14 @@ import org.junit.runner.RunWith
 import org.mockito.Mockito
 import org.mockito.Mockito._
 import org.scalatest.junit.JUnitRunner
-import org.scalatest.{BeforeAndAfterEach, Matchers}
+import org.scalatest.{FlatSpec, Matchers}
 import org.slf4j.{Logger => Underlying}
 
 /**
   * Created by SteveGreen on 30/01/2016.
   */
 @RunWith(classOf[JUnitRunner])
-class DateConvertor$Test extends CustomUnitSpec with Matchers with BeforeAndAfterEach{
+class DateConvertor$Test extends FlatSpec with Matchers {
 
   private val ORIGINAL_DATE = new DateTime("2016-01-30T10:51:23.697")
   private val DATE_GMT_PLUS_5 = new DateTime("2016-01-30T15:51:23.697+05:00")

@@ -1,16 +1,15 @@
 package com.sessioncam.model
 
-import com.sessioncam.CustomUnitSpec
 import org.joda.time.DateTime
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
-import org.scalatest.{BeforeAndAfterEach, Matchers}
+import org.scalatest.{FlatSpec, Inside, Matchers}
 
 /**
   * Created by SteveGreen on 31/01/2016.
   */
 @RunWith(classOf[JUnitRunner])
-class TimezoneDetails$Test extends CustomUnitSpec with Matchers with BeforeAndAfterEach {
+class TimezoneDetails$Test extends FlatSpec with Inside with Matchers {
 
   val NAME = "some-name"
   val TIMEZONE = "some-timezone"

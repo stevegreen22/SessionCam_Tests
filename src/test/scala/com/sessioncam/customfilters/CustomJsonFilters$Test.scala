@@ -1,16 +1,15 @@
 package com.sessioncam.customfilters
 
-import com.sessioncam.CustomUnitSpec
 import com.sessioncam.model.TimezoneDetails
 import org.junit.runner.RunWith
+import org.scalatest._
 import org.scalatest.junit.JUnitRunner
-import org.scalatest.{BeforeAndAfterEach, Matchers}
 
 /**
   * Created by SteveGreen on 31/01/2016.
   */
 @RunWith(classOf[JUnitRunner])
-class CustomJsonFilters$Test extends CustomUnitSpec with Matchers with BeforeAndAfterEach{
+class CustomJsonFilters$Test extends FlatSpec with Matchers {
 
   def initTest: CustomJsonFiltering = {
     new CustomJsonFiltering() {

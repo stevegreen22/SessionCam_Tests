@@ -2,20 +2,19 @@ package com.sessioncam.FileParsing
 
 import java.io.{File, FileNotFoundException}
 
-import com.sessioncam.CustomUnitSpec
 import com.typesafe.scalalogging.Logger
 import org.junit.runner.RunWith
 import org.mockito.Mockito
 import org.mockito.Mockito._
 import org.scalatest.junit.JUnitRunner
-import org.scalatest.{BeforeAndAfterEach, Matchers}
+import org.scalatest.{FlatSpec, Matchers}
 import org.slf4j.{Logger => Underlying}
 
 /**
   * Created by SteveGreen on 31/01/2016.
   */
 @RunWith(classOf[JUnitRunner])
-class InputFileParser$Test extends CustomUnitSpec with Matchers with BeforeAndAfterEach{
+class InputFileParser$Test extends FlatSpec with Matchers {
 
   def initTest(mocked: Underlying): InputFileParser = {
     new InputFileParser() {
